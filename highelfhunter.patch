@@ -1,0 +1,105 @@
+diff --git a/src/server/game/Spells/Auras/SpellAuraEffects.cpp b/src/server/game/Spells/Auras/SpellAuraEffects.cpp
+index eb470bd9e..f66e072f3 100644
+--- a/src/server/game/Spells/Auras/SpellAuraEffects.cpp
++++ b/src/server/game/Spells/Auras/SpellAuraEffects.cpp
+@@ -2194,6 +2194,9 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                                 case RACE_BLOODELF:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 17829 : 17830);
+                                     break;
++                                case RACE_HIGHELF:
++                                    target->SetDisplayId(target->getGender() == GENDER_MALE ? 17829 : 17830);
++                                    break;
+                                 // Orc
+                                 case RACE_ORC:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 10139 : 10140);
+@@ -2253,6 +2256,10 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                                 case RACE_BLOODELF:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 25032 : 25043);
+                                     break;
++                                // High Elf
++                                case RACE_HIGHELF:
++                                    target->SetDisplayId(target->getGender() == GENDER_MALE ? 25032 : 25043);
++                                    break;
+                                 // Orc
+                                 case RACE_ORC:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 25039 : 25050);
+@@ -2309,6 +2316,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     if (urand(0, 1))
+                                         target->SetDisplayId(target->getGender() == GENDER_MALE ? 21839 : 21838);
+                                     else
+@@ -2397,6 +2405,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 18793 : 18785);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2439,6 +2448,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 19170 : 19169);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2481,6 +2491,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 18841 : 18840);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2523,6 +2534,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 22361 : 22360);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2565,6 +2577,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 21086 : 21085);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2607,6 +2620,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 24508 : 24519);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -2649,6 +2663,7 @@ void AuraEffect::HandleAuraTransform(AuraApplication const* aurApp, uint8 mode,
+                             switch (target->GetDisplayRace())
+                             {
+                                 case DisplayRace::BloodElf:
++                                case DisplayRace::HighElf:
+                                     target->SetDisplayId(target->getGender() == GENDER_MALE ? 25032 : 25043);
+                                     break;
+                                 case DisplayRace::Orc:
+@@ -5588,6 +5603,15 @@ void AuraEffect::HandleAuraDummy(AuraApplication const* aurApp, uint8 mode, bool
+                     case 30105:
+                         finalSpelId = 30104;
+                         break;
++                    case 80866:
++                        finalSpelId = 80869;
++                        break;
++                    case 80867:
++                        finalSpelId = 80870;
++                        break;
++                    case 80868:
++                        finalSpelId = 80871;
++                        break;
+                 }
+ 
+                 if (finalSpelId)
