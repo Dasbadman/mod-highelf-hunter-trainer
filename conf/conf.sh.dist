@@ -6,5 +6,5 @@
 ## BASE SQL
 
 DB_WORLD_CUSTOM_PATHS+=(
-	"$MOD_SKELETON_ROOT/data/sql/world/base/"
+	"$MOD_SKELETON_ROOT/data/sql/db-world/"
 )
